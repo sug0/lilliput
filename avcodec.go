@@ -1,3 +1,5 @@
+// +build !arm64
+
 package lilliput
 
 // #cgo CFLAGS: -msse -msse2 -msse3 -msse4.1 -msse4.2 -mavx
