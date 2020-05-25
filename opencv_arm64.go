@@ -1,8 +1,8 @@
-// +build !arm64
+// +build arm64
 
 package lilliput
 
-// #cgo CFLAGS: -msse -msse2 -msse3 -msse4.1 -msse4.2 -mavx
+// #cgo CFLAGS: -mcpu=cortex-a53 -mtune=cortex-a53
 // #cgo darwin CFLAGS: -I${SRCDIR}/deps/osx/include
 // #cgo linux CFLAGS: -I${SRCDIR}/deps/linux/include
 // #cgo CXXFLAGS: -std=c++11
@@ -426,3 +426,4 @@ func (e *openCVEncoder) Close() {
 	C.opencv_encoder_release(e.encoder)
 	C.opencv_mat_release(e.dst)
 }
+
